@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Semantic.Controls.BandEntryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Semantic.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="26" d:DesignWidth="300">
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Styles\Includes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="15"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox x:Name="comboBox" Grid.ColumnSpan="2"
+                  ItemsSource="{Binding DropDownOptions}" 
+                  SelectedItem="{Binding SelectedDropDownOption}"
+                  BorderBrush="{DynamicResource MetroBackground}">
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="{x:Type ComboBoxItem}" BasedOn="{StaticResource ComboBoxItemSeparatorStyle}" />
+            </ItemsControl.ItemContainerStyle>
+        </ComboBox>
+        <TextBlock Background="{DynamicResource MetroBackground}" Margin="1.5"
+               TextTrimming="CharacterEllipsis" Text="{Binding DisplayString}"/>
+        
+    </Grid>
+</UserControl>

@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A3253DC8-0CE9-4FB0-8BBB-58BD99ED6834}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Semantic.Engine</RootNamespace>
+    <AssemblyName>Semantic.Engine</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Csv, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Csv.1.0.10.0\lib\portable-net45+win\Csv.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="gdalconst_csharp, Version=1.0.5640.28764, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\gdal\x86\vc10\CSharp\gdalconst_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="gdal_csharp, Version=1.0.5640.28764, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\gdal\x86\vc10\CSharp\gdal_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ogr_csharp, Version=1.0.5640.28763, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\gdal\x86\vc10\CSharp\ogr_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="osr_csharp, Version=1.0.5640.28763, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\gdal\x86\vc10\CSharp\osr_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="segment_csharp">
+      <HintPath>..\..\lib\segment\segment_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChangeParam.cs" />
+    <Compile Include="ChangeCalculator.cs" />
+    <Compile Include="ClassifyModel.cs" />
+    <Compile Include="ClassifyParam.cs" />
+    <Compile Include="FeatureParam.cs" />
+    <Compile Include="ConverterHelper.cs" />
+    <Compile Include="Coordinates.cs" />
+    <Compile Include="FeaturesModel.cs" />
+    <Compile Include="FieldDefninition.cs" />
+    <Compile Include="GChangeDetectionParam.cs" />
+    <Compile Include="GdalRasterSet.cs" />
+    <Compile Include="GeoClass.cs" />
+    <Compile Include="GeoClassDefinition.cs" />
+    <Compile Include="ICalculator.cs" />
+    <Compile Include="ImagePoint.cs" />
+    <Compile Include="ITableMember.cs" />
+    <Compile Include="LayerDefinition.cs" />
+    <Compile Include="OgrLayer.cs" />
+    <Compile Include="PartitionExtension.cs" />
+    <Compile Include="VectorPN.cs" />
+    <Compile Include="ProgressEventArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultSet.cs" />
+    <Compile Include="SegmentModel.cs" />
+    <Compile Include="SegmentParam.cs" />
+    <Compile Include="SampleEntry.cs" />
+    <Compile Include="VerifyFeaturesExt.cs" />
+    <Compile Include="XmlSerialize.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChangeDetectWrapper\ChangeDetectWrapper.vcxproj">
+      <Project>{bb893ebb-3c7f-4602-b163-7686eedd20d3}</Project>
+      <Name>ChangeDetectWrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Semantic.Configure\Semantic.Configure.csproj">
+      <Project>{e6d40eab-09bd-4db1-9306-f4e590453293}</Project>
+      <Name>Semantic.Configure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VerifyFeatureSetWrapper\VerifyFeatureSetWrapper.vcxproj">
+      <Project>{a6f17087-d5e5-49d4-8b1a-d2f4972f0aa2}</Project>
+      <Name>VerifyFeatureSetWrapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GeoClass.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="geoclassdefine.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="VerifyFeatureSet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

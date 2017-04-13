@@ -1,0 +1,15 @@
+﻿{
+  "properties": {
+    "fillcolor": {
+      "r": 200,
+      "g": 200,
+      "b": 200
+    },
+    "linewith": 1,
+    "linecolor": {
+      "r": 200,
+      "g": 200,
+      "b": 200
+    }
+  }
+}

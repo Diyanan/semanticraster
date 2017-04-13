@@ -1,0 +1,12 @@
+﻿{
+  "name": "分割",
+  "task_type": 0,
+  "params": {
+    "input": "",
+    "params": {
+      "algorithm": 1,
+      // 参数
+    },
+    "output": ""
+  }
+}

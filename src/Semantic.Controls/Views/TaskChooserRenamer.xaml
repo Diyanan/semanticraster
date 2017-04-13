@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="Semantic.Controls.TaskChooserRenamer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Semantic.Controls"
+             xmlns:wpfEx="clr-namespace:Semantic.WpfExtensions;assembly=Semantic.WpfExtensions"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Styles\Converters.xaml"/>
+                <x:Static Member="local:ChromelessWindowBase.MainThemeDictionary"/>
+                <x:Static Member="local:ChromelessWindowBase.StaticallyThemedTemplatesDictionary"/>
+                <ResourceDictionary Source="..\Styles\RedlineBase.xaml"/>
+                <ResourceDictionary Source="..\Styles\ControlBaseStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource TitleTextBoxStyle}">
+            </Style>
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <Border Name="RenameMouseoverAreaBorder" Padding="10" Margin="-10" Background="Transparent">
+        <Grid Margin="-2 0 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <ContentControl Name="TaskSelectorBox" Content="{Binding}">
+                <FrameworkElement.Style>
+                    <Style TargetType="{x:Type ContentControl}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsChecked, ElementName=TaskRenameButton}" Value="false">
+                                <Setter Property="ContentControl.ContentTemplate">
+                                    <Setter.Value>
+                                        <DataTemplate>
+                                            <ComboBox Name="LayerSelectorComboBox" 
+                                                      BorderBrush="Transparent"
+                                                      ItemsSource="{Binding Tasks}" 
+                                                      SelectedItem="{Binding SelectedTask}">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid Margin="-2 0 0 4">
+                                                            <TextBlock Margin="{StaticResource TitleBaselineMargin}" 
+                                                                       Style="{StaticResource TitleStyle}"
+                                                                       Foreground="{DynamicResource MetroBaseGreenText}" 
+                                                                       Text="{Binding Task.Name}"/>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ComboBox>
+                                        </DataTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsChecked, ElementName=TaskRenameButton}" Value="true">
+                                <Setter Property="ContentControl.ContentTemplate">
+                                    <Setter.Value>
+                                        <DataTemplate>
+                                            <Grid Margin="0 1 0 0">
+                                                <TextBox Name="TaskRenamerTextBox" 
+                                                         Margin="{StaticResource TitleBaselineMargin}"
+                                                         VerticalAlignment="Center"
+                                                         wpfEx:FocusHelper.AdvanceOnEnterKey="true"
+                                                         Text="{Binding SelectedTask.Task.Name}"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </FrameworkElement.Style>
+            </ContentControl>
+            <ToggleButton PreviewMouseDown="TaskRenameButton_PreviewMouseDown" Checked="TaskRenameButton_Checked"
+                    Name="TaskRenameButton" Style="{DynamicResource TaskRenameButtonStyle}" Grid.Column="1"
+                    HorizontalAlignment="Right" VerticalAlignment="Center"
+                    ToolTip="修改名称" Width="20"
+                    Height="{Binding ElementName=TaskSelectorBox, Path=ActualHeight}">
+                <Image Source="/Semantic.Controls;component/Images/Edit.png" Width="16" Height="16"/>
+            </ToggleButton>
+        </Grid>
+    </Border>
+</UserControl>

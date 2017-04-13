@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Semantic.Controls.TaskPanelLayersTabView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:wpfEx="clr-namespace:Semantic.WpfExtensions;assembly=Semantic.WpfExtensions"
+             xmlns:local="clr-namespace:Semantic.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Styles\Includes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate x:Key="LayerViewModelDragTemplate">
+                <local:LayerListEntryView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="图层列表" d:LayoutOverrides="Width, Height" Margin="0,0,10,0"/>
+            <Button x:Name="AddLayer" Grid.Column="1" Style="{DynamicResource AddNewLayerButtonStyle}" Command="{Binding AddNewLayerCommand}"/>
+        </Grid>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ItemsControl Margin="8" IsTabStop="false" ItemsSource="{Binding LayerList}"
+                          wpfEx:DragDropHelper.DefaultDragDropEffect="Move"
+                          wpfEx:DragDropHelper.DragDropTemplate="{StaticResource LayerViewModelDragTemplate}"
+                          wpfEx:DragDropHelper.DragHandler="{Binding LayersDragHandler}"
+                          wpfEx:DragDropHelper.DropHandler="{Binding LayersDropHandler}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:LayerListEntryView Margin="0,2"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

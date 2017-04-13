@@ -1,0 +1,977 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04414BE5-12D7-4757-AF0F-D9ED0B307A72}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Semantic.Controls</RootNamespace>
+    <AssemblyName>Semantic.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="gdalconst_csharp, Version=1.0.5387.28601, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\gdal\x86\vc10\CSharp\gdalconst_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="gdal_csharp, Version=1.0.5387.28601, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\gdal\x86\vc10\CSharp\gdal_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ogr_csharp, Version=1.0.5387.28600, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\gdal\x86\vc10\CSharp\ogr_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="osr_csharp, Version=1.0.5387.28600, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\gdal\x86\vc10\CSharp\osr_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="Semantic.Chart, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Semantic.Chart.1.0.0.0\lib\net45\Semantic.Chart.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Semantic.ChartCommon, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Semantic.ChartCommon.1.0.2.0\lib\net45\Semantic.ChartCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Semantic.WpfCommon, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Semantic.WpfCommon.1.0.3.0\lib\net45\Semantic.WpfCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Semantic.WpfExtensions, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Semantic.WpfExtensions.1.0.4.0\lib\net45\Semantic.WpfExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddFilterSelectionDialogViewModel.cs" />
+    <Compile Include="ChangeSettingsViewModel.cs" />
+    <Compile Include="CheckViewModel.cs" />
+    <Compile Include="FeatureTable.cs" />
+    <Compile Include="FeatureTableItemViewModel.cs" />
+    <Compile Include="IFeatureSelection.cs" />
+    <Compile Include="Views\FeatureTableItemView.xaml.cs">
+      <DependentUpon>FeatureTableItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CheckView.xaml.cs">
+      <DependentUpon>CheckView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IProImage.cs" />
+    <Compile Include="ProjectManager\GChangeDetection.cs" />
+    <Compile Include="VectorLayerStyleViewModel.cs" />
+    <Compile Include="ColorPicker\Color4F.cs" />
+    <Compile Include="ColorPicker\ColorExtensions.cs" />
+    <Compile Include="IJoinTableManager.cs" />
+    <Compile Include="JsonHelper.cs" />
+    <Compile Include="ProjectManager\ChangeTask.cs" />
+    <Compile Include="ProjectManager\ProjectItem.cs" />
+    <Compile Include="ProjectManager\ProjectManagerViewModel.cs" />
+    <Compile Include="Views\ChangeSettingsView.xaml.cs">
+      <DependentUpon>ChangeSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JoinEntityView.xaml.cs">
+      <DependentUpon>JoinEntityView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JoinManagerView.xaml.cs">
+      <DependentUpon>JoinManagerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JoinEntityViewModel.cs" />
+    <Compile Include="JoinManagerViewModel.cs" />
+    <Compile Include="ILayerManager.cs" />
+    <Compile Include="ILayerTools.cs" />
+    <Compile Include="Views\RasterLayerSettingsView.xaml.cs">
+      <DependentUpon>RasterLayerSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RasterLayerSettingsViewModel.cs" />
+    <Compile Include="SymbolProperties.cs" />
+    <Compile Include="ColorSelector.cs" />
+    <Compile Include="IVisualization.cs" />
+    <Compile Include="LayerColorManager.cs" />
+    <Compile Include="UndoItemViewModel.cs" />
+    <Compile Include="Views\VectorSettingsView.xaml.cs">
+      <DependentUpon>VectorSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VectorSettingsViewModel.cs" />
+    <Compile Include="Views\LayerSettingsView.xaml.cs">
+      <DependentUpon>LayerSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LayerSettingsViewModel.cs" />
+    <Compile Include="SampleItemViewModel.cs" />
+    <Compile Include="SegmentGraphCutViewModel.cs" />
+    <Compile Include="SegmentJSEGViewModel.cs" />
+    <Compile Include="SegmentMSViewModel.cs" />
+    <Compile Include="SegmentMultiSegViewModel.cs" />
+    <Compile Include="SegmentQuadTreeViewModel.cs" />
+    <Compile Include="SegmentSettingsViewModel.cs" />
+    <Compile Include="SegmentSuperPixelViewModel.cs" />
+    <Compile Include="ProjectManager\SegTask.cs" />
+    <Compile Include="ProjectManager\ClassifyTask.cs" />
+    <Compile Include="FieldViewModel.cs" />
+    <Compile Include="ClassificationSettingsViewModel.cs" />
+    <Compile Include="ColorPicker\Color4FToSolidColorBrushConverter.cs" />
+    <Compile Include="ColorPicker\ColorPickerButtonImageConverter.cs" />
+    <Compile Include="ColorPicker\ColorPickerViewModel.cs" />
+    <Compile Include="GeoVisualization.cs" />
+    <Compile Include="SelectionStats.cs" />
+    <Compile Include="Views\TaskSettingsView.xaml.cs">
+      <DependentUpon>TaskSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskSettingsViewModel.cs" />
+    <Compile Include="Views\SelectionStatsView.xaml.cs">
+      <DependentUpon>SelectionStatsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPanelSamplesTabViewModel.cs" />
+    <Compile Include="Views\ClassificationSettingsView.xaml.cs">
+      <DependentUpon>ClassificationSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ColorPickerView.xaml.cs">
+      <DependentUpon>ColorPickerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeoClassViewModel.cs" />
+    <Compile Include="GeoDataSource.cs" />
+    <Compile Include="DialogViewModelBase.cs" />
+    <Compile Include="OgrModelQuery.cs" />
+    <Compile Include="TableFieldViewModel.cs" />
+    <Compile Include="TableIslandViewModel.cs" />
+    <Compile Include="TableViewModel.cs" />
+    <Compile Include="TaskPanelFiltersTabViewModel.cs" />
+    <Compile Include="DateTimeEditor\AMPM.cs" />
+    <Compile Include="DateTimeEditor\AMPMConverter.cs" />
+    <Compile Include="DateTimeEditor\DateTimeConstants.cs" />
+    <Compile Include="FilterModel\AggregationFunction.cs" />
+    <Compile Include="FilterModel\AggregationFunctionExtensions.cs" />
+    <Compile Include="CalculatorFactory.cs" />
+    <Compile Include="CharacterListEntryViewModel.cs" />
+    <Compile Include="CharacterParamSettingViewModel.cs" />
+    <Compile Include="CharacterIslandBuilder.cs" />
+    <Compile Include="ProjectManager\FeatureTask.cs" />
+    <Compile Include="DateTimeEditor\DateTimeEditorViewModel.cs" />
+    <Compile Include="FilterViewModel\ExpressionFilterViewModel.cs" />
+    <Compile Include="FilterViewModel\FilterViewModelBase.cs" />
+    <Compile Include="FilterModel\AndOrFilterClause.cs" />
+    <Compile Include="FilterModel\CategoryFilterClause.cs" />
+    <Compile Include="FilterModel\DateTimeFilterPredicate.cs" />
+    <Compile Include="FilterModel\DateTimeFilterPredicateComparison.cs" />
+    <Compile Include="FilterModel\DateTimeFilterPredicateProperties.cs" />
+    <Compile Include="FilterModel\Filter.cs" />
+    <Compile Include="FilterModel\FilterClause.cs" />
+    <Compile Include="FilterModel\FilterPredicate.cs" />
+    <Compile Include="FilterModel\FilterPredicateOperator.cs" />
+    <Compile Include="FilterModel\FilterPredicateProperties.cs" />
+    <Compile Include="FilterModel\NumericFilterPredicate.cs" />
+    <Compile Include="FilterModel\NumericFilterPredicateComparison.cs" />
+    <Compile Include="FilterModel\NumericRangeFilterClause.cs" />
+    <Compile Include="FilterModel\StringFilterPredicate.cs" />
+    <Compile Include="FilterModel\StringFilterPredicateComparison.cs" />
+    <Compile Include="FilterViewModel\ListFilterItemViewModel.cs" />
+    <Compile Include="FilterViewModel\ListFilterViewModel.cs" />
+    <Compile Include="FilterViewModel\RangeFilterViewModel.cs" />
+    <Compile Include="TableModel\ModelWrapper.cs" />
+    <Compile Include="TableModel\IModelWrapper.cs" />
+    <Compile Include="TableModel\ModelQuery\KeyColumnDataType.cs" />
+    <Compile Include="TableModel\ModelQuery\ModelQuery.cs" />
+    <Compile Include="TableModel\ModelQuery\ModelQueryColumn.cs" />
+    <Compile Include="TableModel\ModelQuery\ModelQueryIndexedKeyColumn.cs" />
+    <Compile Include="TableModel\ModelQuery\ModelQueryKeyColumn.cs" />
+    <Compile Include="TableModel\ModelQuery\ModelQueryMeasureColumn.cs" />
+    <Compile Include="TableModel\ModelQuery\ModelQueryTimeKeyColumn.cs" />
+    <Compile Include="TableModel\ModelQuery\TimeChunkPeriod.cs" />
+    <Compile Include="TableModel\ModelQuery\TimeChunkPeriodExtensions.cs" />
+    <Compile Include="TableModel\GeoEntityField.cs" />
+    <Compile Include="TableModel\GeoField.cs" />
+    <Compile Include="TableModel\GeoFieldMappingType.cs" />
+    <Compile Include="TableModel\GeoFieldMappingTypeUtil.cs" />
+    <Compile Include="TableModel\GeoFullAddressField.cs" />
+    <Compile Include="TableModel\GeoMappingType.cs" />
+    <Compile Include="TableModel\LatLongField.cs" />
+    <Compile Include="TableModel\ModelMetadata.cs" />
+    <Compile Include="TableModel\TableColumn.cs" />
+    <Compile Include="TableModel\TableField.cs" />
+    <Compile Include="TableModel\TableIsland.cs" />
+    <Compile Include="TableModel\TableMeasure.cs" />
+    <Compile Include="TableModel\TableMember.cs" />
+    <Compile Include="TableModel\TableMemberClassification.cs" />
+    <Compile Include="TableModel\TableMemberClassificationUtil.cs" />
+    <Compile Include="TableModel\TableMemberDataType.cs" />
+    <Compile Include="TableModel\TableMetadata.cs" />
+    <Compile Include="TableModel\XYField.cs" />
+    <Compile Include="Views\GeoClassView.xaml.cs">
+      <DependentUpon>GeoClassView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DateTimeEditorView.xaml.cs">
+      <DependentUpon>DateTimeEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExpressionFilterView.xaml.cs">
+      <DependentUpon>ExpressionFilterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RangeFilterView.xaml.cs">
+      <DependentUpon>RangeFilterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopupAggregationButtonView.xaml.cs">
+      <DependentUpon>PopupAggregationButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListFilterView.xaml.cs">
+      <DependentUpon>ListFilterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddFilterSelectionDialogView.xaml.cs">
+      <DependentUpon>AddFilterSelectionDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SegmentGraphCutView.xaml.cs">
+      <DependentUpon>SegmentGraphCutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SegmentJSEGView.xaml.cs">
+      <DependentUpon>SegmentJSEGView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SegmentMSView.xaml.cs">
+      <DependentUpon>SegmentMSView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SegmentMultiSegView.xaml.cs">
+      <DependentUpon>SegmentMultiSegView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SegmentQuadTreeView.xaml.cs">
+      <DependentUpon>SegmentQuadTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SegmentSettingsView.xaml.cs">
+      <DependentUpon>SegmentSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SegmentSuperPixelView.xaml.cs">
+      <DependentUpon>SegmentSuperPixelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SegmentWaterShedView.xaml.cs">
+      <DependentUpon>SegmentWaterShedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentWaterShedViewModel.cs" />
+    <Compile Include="Views\TableIslandView.xaml.cs">
+      <DependentUpon>TableIslandView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TableView.xaml.cs">
+      <DependentUpon>TableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskPanelFiltersTabView.xaml.cs">
+      <DependentUpon>TaskPanelFiltersTabView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CharacterParamSettingView.xaml.cs">
+      <DependentUpon>CharacterParamSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CharacterSettingsViewModel.cs" />
+    <Compile Include="CharacterViewModel.cs" />
+    <Compile Include="CharacterIslandViewModel.cs" />
+    <Compile Include="CharacterListViewModel.cs" />
+    <Compile Include="CharacterSetViewModel.cs" />
+    <Compile Include="TaskPanelSettingsTabViewModel.cs" />
+    <Compile Include="Views\TaskPanelSamplesTabView.xaml.cs">
+      <DependentUpon>TaskPanelSamplesTabView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskPanelSettingsTabView.xaml.cs">
+      <DependentUpon>TaskPanelSettingsTabView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectManager\SemanticProject.cs" />
+    <Compile Include="TaskChooserViewModel.cs" />
+    <Compile Include="TaskManagerViewModel.cs" />
+    <Compile Include="TaskTitleConverter.cs" />
+    <Compile Include="LayerChooserViewModel.cs" />
+    <Compile Include="ProjectManager\SemanticTask.cs" />
+    <Compile Include="TaskEditorViewModel.cs" />
+    <Compile Include="TaskViewModel.cs" />
+    <Compile Include="Views\TaskChooserRenamer.xaml.cs">
+      <DependentUpon>TaskChooserRenamer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskView.xaml.cs">
+      <DependentUpon>TaskView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LayerChooserView.xaml.cs">
+      <DependentUpon>LayerChooserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LayerManagerViewModel.cs" />
+    <Compile Include="LayerViewModel.cs" />
+    <Compile Include="TaskPanelLayersTabViewModel.cs" />
+    <Compile Include="LayerManager.cs" />
+    <Compile Include="TaskPanelCharactersTabViewModel.cs" />
+    <Compile Include="TaskPanelViewModel.cs" />
+    <Compile Include="Views\CharacterListEntryView.xaml.cs">
+      <DependentUpon>CharacterListEntryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CharacterListView.xaml.cs">
+      <DependentUpon>CharacterListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CompletionStats.cs" />
+    <Compile Include="CompletionStatsViewModel.cs" />
+    <Compile Include="RasterBandViewModel.cs" />
+    <Compile Include="FieldWellEntryViewModel.cs" />
+    <Compile Include="Views\TaskPanelCharactersTabView.xaml.cs">
+      <DependentUpon>TaskPanelCharactersTabView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CharacterSetView.xaml.cs">
+      <DependentUpon>CharacterSetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CharacterIslandView.xaml.cs">
+      <DependentUpon>CharacterIslandView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LayerListEntryView.xaml.cs">
+      <DependentUpon>LayerListEntryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveItemPlaceholder.cs" />
+    <Compile Include="Views\TaskPanelLayersTabView.xaml.cs">
+      <DependentUpon>TaskPanelLayersTabView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BandEntryView.xaml.cs">
+      <DependentUpon>BandEntryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CharacterSettingsView.xaml.cs">
+      <DependentUpon>CharacterSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HostControlViewModel.cs" />
+    <Compile Include="ListUtilities.cs" />
+    <Compile Include="MapViewModel.cs" />
+    <Compile Include="StatusBarViewModel.cs" />
+    <Compile Include="Views\StatusBarView.xaml.cs">
+      <DependentUpon>StatusBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MapHostView.xaml.cs">
+      <DependentUpon>MapHostView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskEditorView.xaml.cs">
+      <DependentUpon>TaskEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RangeSlider.cs" />
+    <Compile Include="RangeSlider_Resources.cs" />
+    <Compile Include="RangeStringConverter.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskPanelView.xaml.cs">
+      <DependentUpon>TaskPanelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChromelessWindowBase.xaml.cs">
+      <DependentUpon>ChromelessWindowBase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CompletionStatsView.xaml.cs">
+      <DependentUpon>CompletionStatsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TableFieldToolTipView.xaml.cs">
+      <DependentUpon>TableFieldToolTipView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HostControlView.xaml.cs">
+      <DependentUpon>HostControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DialogWindow.xaml.cs">
+      <DependentUpon>DialogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizationModel.cs" />
+    <Compile Include="VisualizationTraceSource.cs" />
+    <Compile Include="WindowViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\100\addlayer.png" />
+    <Resource Include="Images\100\addlayer_small.png" />
+    <Resource Include="Images\100\addscene.png" />
+    <Resource Include="Images\100\addscene_small.png" />
+    <Resource Include="Images\100\capturescreen.png" />
+    <Resource Include="Images\100\capturescreen_small.png" />
+    <Resource Include="Images\100\chart.png" />
+    <Resource Include="Images\100\chart_small.png" />
+    <Resource Include="Images\100\createvideo.png" />
+    <Resource Include="Images\100\createvideo_small.png" />
+    <Resource Include="Images\100\datashapes.png" />
+    <Resource Include="Images\100\datashapes_small.png" />
+    <Resource Include="Images\100\duplicatescene.png" />
+    <Resource Include="Images\100\duplicatescene_small.png" />
+    <Resource Include="Images\100\findlocation.png" />
+    <Resource Include="Images\100\findlocation_small.png" />
+    <Resource Include="Images\100\flatmap.png" />
+    <Resource Include="Images\100\flatmap_small.png" />
+    <Resource Include="Images\100\insert.png" />
+    <Resource Include="Images\100\layer.png" />
+    <Resource Include="Images\100\layersettingsribbon.png" />
+    <Resource Include="Images\100\layersettingsribbon_small.png" />
+    <Resource Include="Images\100\legend.png" />
+    <Resource Include="Images\100\legend_small.png" />
+    <Resource Include="Images\100\map.png" />
+    <Resource Include="Images\100\maplabels.png" />
+    <Resource Include="Images\100\maplabels_small.png" />
+    <Resource Include="Images\100\newscene.png" />
+    <Resource Include="Images\100\newscene_small.png" />
+    <Resource Include="Images\100\playtour.png" />
+    <Resource Include="Images\100\refreshdata.png" />
+    <Resource Include="Images\100\refreshdata_small.png" />
+    <Resource Include="Images\100\scenesettingsribbon.png" />
+    <Resource Include="Images\100\scenesettingsribbon_small.png" />
+    <Resource Include="Images\100\taskpanes.png" />
+    <Resource Include="Images\100\textbox.png" />
+    <Resource Include="Images\100\textbox_small.png" />
+    <Resource Include="Images\100\theme.png" />
+    <Resource Include="Images\100\theme_small.png" />
+    <Resource Include="Images\100\time.png" />
+    <Resource Include="Images\100\timedecorator.png" />
+    <Resource Include="Images\100\timeline.png" />
+    <Resource Include="Images\100\timeline_small.png" />
+    <Resource Include="Images\100\timeproperties.png" />
+    <Resource Include="Images\100\tour.png" />
+    <Resource Include="Images\100\tourpane.png" />
+    <Resource Include="Images\100\tourpane_small.png" />
+    <Resource Include="Images\100\view.png" />
+    <Resource Include="Images\200\addlayer.png" />
+    <Resource Include="Images\200\addlayer_small.png" />
+    <Resource Include="Images\200\addscene.png" />
+    <Resource Include="Images\200\addscene_small.png" />
+    <Resource Include="Images\200\capturescreen.png" />
+    <Resource Include="Images\200\capturescreen_small.png" />
+    <Resource Include="Images\200\chart.png" />
+    <Resource Include="Images\200\chart_small.png" />
+    <Resource Include="Images\200\createvideo.png" />
+    <Resource Include="Images\200\createvideo_small.png" />
+    <Resource Include="Images\200\datashapes.png" />
+    <Resource Include="Images\200\datashapes_small.png" />
+    <Resource Include="Images\200\duplicatescene.png" />
+    <Resource Include="Images\200\duplicatescene_small.png" />
+    <Resource Include="Images\200\findlocation.png" />
+    <Resource Include="Images\200\findlocation_small.png" />
+    <Resource Include="Images\200\flatmap.png" />
+    <Resource Include="Images\200\flatmap_small.png" />
+    <Resource Include="Images\200\insert.png" />
+    <Resource Include="Images\200\layer.png" />
+    <Resource Include="Images\200\layersettingsribbon.png" />
+    <Resource Include="Images\200\layersettingsribbon_small.png" />
+    <Resource Include="Images\200\legend.png" />
+    <Resource Include="Images\200\legend_small.png" />
+    <Resource Include="Images\200\map.png" />
+    <Resource Include="Images\200\maplabels.png" />
+    <Resource Include="Images\200\maplabels_small.png" />
+    <Resource Include="Images\200\newscene.png" />
+    <Resource Include="Images\200\newscene_small.png" />
+    <Resource Include="Images\200\playtour.png" />
+    <Resource Include="Images\200\refreshdata.png" />
+    <Resource Include="Images\200\refreshdata_small.png" />
+    <Resource Include="Images\200\scenesettingsribbon.png" />
+    <Resource Include="Images\200\scenesettingsribbon_small.png" />
+    <Resource Include="Images\200\taskpanes.png" />
+    <Resource Include="Images\200\textbox.png" />
+    <Resource Include="Images\200\textbox_small.png" />
+    <Resource Include="Images\200\theme.png" />
+    <Resource Include="Images\200\time.png" />
+    <Resource Include="Images\200\timedecorator.png" />
+    <Resource Include="Images\200\timeline.png" />
+    <Resource Include="Images\200\timeline_small.png" />
+    <Resource Include="Images\200\timeproperties.png" />
+    <Resource Include="Images\200\tour.png" />
+    <Resource Include="Images\200\tourpane.png" />
+    <Resource Include="Images\200\view.png" />
+    <Resource Include="Images\close_disabled.png" />
+    <Resource Include="Images\close_hover.png" />
+    <Resource Include="Images\close_normal.png" />
+    <Resource Include="Images\close_pressed.png" />
+    <Resource Include="Images\close_white.png" />
+    <Resource Include="Images\fieldstab.png" />
+    <Resource Include="Images\filterdelete.png" />
+    <Resource Include="Images\filteredit.png" />
+    <Resource Include="Images\filteredit_disabled.png" />
+    <Resource Include="Images\filterfn.png" />
+    <Resource Include="Images\filtermode.png" />
+    <Resource Include="Images\filtermode_disabled.png" />
+    <Resource Include="Images\filterstab.png" />
+    <Resource Include="Images\fullscreen_disabled.png" />
+    <Resource Include="Images\fullscreen_hover.png" />
+    <Resource Include="Images\fullscreen_normal.png" />
+    <Resource Include="Images\fullscreen_pressed.png" />
+    <Resource Include="Images\greenpager16x16.png" />
+    <Resource Include="Images\greenpagerclick16x16.png" />
+    <Resource Include="Images\greenpagerdisabled16x16.png" />
+    <Resource Include="Images\greenpagerhover16x16.png" />
+    <Resource Include="Images\greenwind16x16.png" />
+    <Resource Include="Images\greenwindclick16x16.png" />
+    <Resource Include="Images\greenwinddisabled16x16.png" />
+    <Resource Include="Images\greenwindhover16x16.png" />
+    <Resource Include="Images\help_disabled.png" />
+    <Resource Include="Images\help_hover.png" />
+    <Resource Include="Images\help_normal.png" />
+    <Resource Include="Images\help_pressed.png" />
+    <Resource Include="Images\layerstab.png" />
+    <Resource Include="Images\maximize_disabled.png" />
+    <Resource Include="Images\maximize_hover.png" />
+    <Resource Include="Images\maximize_normal.png" />
+    <Resource Include="Images\maximize_pressed.png" />
+    <Resource Include="Images\minimize_disabled.png" />
+    <Resource Include="Images\minimize_hover.png" />
+    <Resource Include="Images\minimize_normal.png" />
+    <Resource Include="Images\minimize_pressed.png" />
+    <Resource Include="Images\newscene.png" />
+    <Resource Include="Images\redo.png" />
+    <Resource Include="Images\redo_disabled.png" />
+    <Resource Include="Images\search.png" />
+    <Resource Include="Images\searchclear.png" />
+    <Resource Include="Images\sendasmile.png" />
+    <Resource Include="Images\settingstab.png" />
+    <Resource Include="Images\undo.png" />
+    <Resource Include="Images\undo_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\FeatureTableItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CheckView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChangeSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\JoinEntityView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\JoinManagerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RasterLayerSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VectorSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LayerSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TaskSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectionStatsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ClassificationSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ColorPickerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\dialogstyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\EnumTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\TimeStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GeoClassView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DateTimeEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExpressionFilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RangeFilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopupAggregationButtonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ListFilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddFilterSelectionDialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SegmentGraphCutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SegmentJSEGView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SegmentMSView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SegmentMultiSegView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SegmentQuadTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SegmentSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SegmentSuperPixelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SegmentWaterShedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TableIslandView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TaskPanelFiltersTabView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CharacterParamSettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TaskPanelSamplesTabView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TaskPanelSettingsTabView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TaskChooserRenamer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TaskView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LayerChooserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CharacterListEntryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CharacterListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TaskPanelCharactersTabView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CharacterSetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CharacterIslandView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LayerListEntryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\fieldliststyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TaskPanelLayersTabView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BandEntryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CharacterSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StatusBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MapHostView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TaskEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ChromeButtonBaseStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ChromeButtonStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Constants.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ControlBaseStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Converters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\DefaultTemplateBindings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\GeoFlowDataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\GeoFlowMetro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Includes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\MetroRibbon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\RangeSlider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\RedlineBase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\scrubberstyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TaskPanelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\HighContrast.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Standard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\StaticallyThemedTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ChromelessWindowBase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CompletionStatsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TableFieldToolTipView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HostControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DialogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\play_16x16x32.png" />
+    <Resource Include="Images\play_16x16x32_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Semantic.Configure\Semantic.Configure.csproj">
+      <Project>{e6d40eab-09bd-4db1-9306-f4e590453293}</Project>
+      <Name>Semantic.Configure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Semantic.Engine\Semantic.Engine.csproj">
+      <Project>{a3253dc8-0ce9-4fb0-8bbb-58bd99ed6834}</Project>
+      <Name>Semantic.Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\color_16x16x32.png" />
+    <Resource Include="Images\reset_16x16x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\reset_view_icon.png" />
+    <Resource Include="Images\zoom_selection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\def\ann.png" />
+    <Resource Include="Images\def\bayes.png" />
+    <Resource Include="Images\def\jc1.png" />
+    <Resource Include="Images\def\jc2.png" />
+    <Resource Include="Images\def\svm.png" />
+    <Resource Include="Images\def\tree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\def\add_new.png" />
+    <Resource Include="Images\def\add_new_small.png" />
+    <Resource Include="Images\def\export.png" />
+    <Resource Include="Images\def\testing.png" />
+    <Resource Include="Images\def\testing_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\def\evaluate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\def\seg_graphcut.png" />
+    <Resource Include="Images\def\seg_jseg.png" />
+    <Resource Include="Images\def\seg_ms.png" />
+    <Resource Include="Images\def\seg_pixel.png" />
+    <Resource Include="Images\def\seg_quadtree.png" />
+    <Resource Include="Images\def\seg_second.png" />
+    <Resource Include="Images\def\seg_voronoi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\def\character.png" />
+    <Resource Include="Images\def\character_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\def\select.png" />
+    <Resource Include="Images\def\select_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\def\band.png" />
+    <Resource Include="Images\def\index.png" />
+    <Resource Include="Images\def\shape.png" />
+    <Resource Include="Images\def\texture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\def\recent.png" />
+    <Resource Include="Images\def\recent_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\def\open.png" />
+    <Resource Include="Images\def\open_small.png" />
+    <Resource Include="Images\def\save.png" />
+    <Resource Include="Images\def\save_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\def\new.png" />
+    <Resource Include="Images\def\new_small.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

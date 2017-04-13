@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <meta>
+    <name>地理国情普查分类定义</name>
+    <desc>依据"20150327-关于印发《第一次全国地理国情普查标准时点核准实施方案》的通知.pdf"整理</desc>
+  </meta>
+  <category>
+    <subject code="01" label="耕地">
+      <secondary code="011" label="水田" />
+      <secondary code="012" label="旱地" />
+    </subject>
+    <subject code="02" label="园地">
+      <secondary code="021" label="果园" />
+      <secondary code="022" label="茶园" />
+      <secondary code="023" label="桑园" />
+      <secondary code="024" label="橡胶园" />
+      <secondary code="025" label="苗圃" />
+      <secondary code="026" label="花圃" />
+      <secondary code="029" label="其他园地" />
+    </subject>
+    <subject code="03" label="林地">
+      <secondary code="031" label="乔木林"/>
+      <secondary code="032" label="灌木林" />
+      <secondary code="033" label="乔灌混合林" />
+      <secondary code="034" label="竹林" />
+      <secondary code="035" label="疏林" />
+      <secondary code="036" label="绿化林地" />
+      <secondary code="037" label="人工幼林" />
+      <secondary code="038" label="稀疏灌丛" />
+    </subject>
+    <subject code="04" label="草地">
+      <secondary code="041" label="天然草地"/>
+      <secondary code="042" label="人工草地"/>
+    </subject>
+    <subject code="05" label="房屋建筑（区）">
+      <secondary code="051" label="多层及以上房屋建筑区"/>
+      <secondary code="052" label="低矮房屋建筑区"/>
+      <secondary code="053" label="废弃房屋建筑区"/>
+      <secondary code="054" label="多层及以上独立房屋建筑"/>
+      <secondary code="055" label="低矮独立房屋建筑"/>
+    </subject>
+    <subject code="06" label="道路">
+      <secondary code="061" label="铁路"/>
+      <secondary code="062" label="公路"/>
+      <secondary code="063" label="城市道路"/>
+      <secondary code="064" label="乡村道路"/>
+    </subject>
+    <subject code="07" label="构筑物">
+      <secondary code="071" label="硬化地表"/>
+      <secondary code="072" label="水工设施"/>
+      <secondary code="073" label="交通设施"/>
+      <secondary code="074" label="城墙"/>
+      <secondary code="075" label="温室、大棚"/>
+      <secondary code="076" label="固化池"/>
+      <secondary code="077" label="工业设施"/>
+      <secondary code="078" label="沙障"/>
+      <secondary code="079" label="其他构筑物"/>
+    </subject>
+    <subject code="08" label="人工堆掘地">
+      <secondary code="081" label="露天采掘场"/>
+      <secondary code="082" label="堆放物"/>
+      <secondary code="083" label="建筑工地"/>
+      <secondary code="089" label="其他人工堆掘地"/>
+    </subject>
+    <subject code="09" label="荒漠与裸露地表">
+      <secondary code="091" label="盐碱地表"/>
+      <secondary code="092" label="泥土地表"/>
+      <secondary code="093" label="沙质地表"/>
+      <secondary code="094" label="砾石地表"/>
+      <secondary code="095" label="岩石地表"/>
+    </subject>
+    <subject code="10" label="水域">
+      <secondary code="101" label="河渠"/>
+      <secondary code="102" label="湖泊"/>
+      <secondary code="103" label="库塘"/>
+      <secondary code="104" label="海面"/>
+      <secondary code="105" label="冰川与常年积雪"/>
+    </subject>
+    <subject code="11" label="地理单元">
+      <secondary code="111" label="行政区划与管理单元"/>
+      <secondary code="112" label="社会经济区域单元"/>
+      <secondary code="113" label="自然地理单元"/>
+      <secondary code="114" label="城镇综合功能单元"/>
+    </subject>
+  </category>
+</root>

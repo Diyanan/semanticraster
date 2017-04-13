@@ -1,0 +1,459 @@
+﻿{
+  "Properties": {
+    "Name": "检验特征集",
+    "Version": "1.0.0.1",
+    "ProductDate": "2014年12月22日"
+  },
+  "FeatureSet": [
+    {
+      "Name": "光谱特征",
+      "Features": [
+        {
+          "Name": "图层均值",
+          "AlgorithmName": "Mean",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "Mean",
+            "Unified": "False"
+          },
+          "Comments": "计算样本图像层的均值"
+        },
+        {
+          "Name": "亮度",
+          "AlgorithmName": "Brightness",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "Brightness",
+            "Unified": "True"
+          },
+          "Comments": "计算样本图像层的亮度"
+        },
+        {
+          "Name": "标准差",
+          "AlgorithmName": "StdDev",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "StdDev",
+            "Unified": "True"
+          },
+          "Comments": "计算样本图像层的标准差"
+        },
+        {
+          "Name": "贡献率",
+          "AlgorithmName": "Ratio",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "Ratio",
+            "Unified": "False"
+          },
+          "Comments": "计算样本图像层的贡献率"
+        },
+        {
+          "Name": "最大异质性",
+          "AlgorithmName": "MaxDiff",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "MaxDiff",
+            "Unified": "True"
+          },
+          "Comments": "计算样本图像层的最大异质性"
+        }
+      ]
+    },
+    {
+      "Name": "形状特征",
+      "Features": [
+        {
+          "Name": "面积",
+          "AlgorithmName": "Area",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "Area",
+            "Unified": "True"
+          },
+          "Comments": "计算样本的面积"
+        },
+        {
+          "Name": "长度/宽度",
+          "AlgorithmName": "LengthWidthRatio",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "LWRatio",
+            "Unified": "True"
+          },
+          "Comments": "计算样本的长度/宽度"
+        },
+        {
+          "Name": "长度",
+          "AlgorithmName": "Length",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "Length",
+            "Unified": "True"
+          },
+          "Comments": "计算样本的长度"
+        },
+        {
+          "Name": "宽度",
+          "AlgorithmName": "Width",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "Width",
+            "Unified": "True"
+          },
+          "Comments": "计算样本的宽度"
+        },
+        {
+          "Name": "边界长度",
+          "AlgorithmName": "BorderLength",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "BorderLeng",
+            "Unified": "True"
+          },
+          "Comments": "计算样本对象的边界长度"
+        },
+        {
+          "Name": "主要方向",
+          "AlgorithmName": "MainDirection",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "MainDirect",
+            "Unified": "True"
+          },
+          "Comments": "计算样本对象的主要方向"
+        },
+        {
+          "Name": "不对称性",
+          "AlgorithmName": "Asymmetry",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "Asymmetry",
+            "Unified": "True"
+          },
+          "Comments": "计算样本对象的不对称性"
+        },
+        {
+          "Name": "紧致度",
+          "AlgorithmName": "Compactness",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "Compact",
+            "Unified": "True"
+          },
+          "Comments": "计算样本对象的紧致度"
+        },
+        {
+          "Name": "密度",
+          "AlgorithmName": "Density",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "Density",
+            "Unified": "True"
+          },
+          "Comments": "计算样本对象的密度"
+        },
+        {
+          "Name": "形状指数",
+          "AlgorithmName": "ShapeIndex",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "ShapeIndex",
+            "Unified": "True"
+          },
+          "Comments": "计算样本对象的形状指数"
+        },
+        {
+          "Name": "矩形度",
+          "AlgorithmName": "Rectangle",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "Rectangle",
+            "Unified": "True"
+          },
+          "Comments": "计算样本对象的矩形度"
+        },
+        {
+          "Name": "细长度",
+          "AlgorithmName": "Elongatedness",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "Elongated",
+            "Unified": "True"
+          },
+          "Comments": "计算样本对象的细长度"
+        },
+        {
+          "Name": "边界指数",
+          "AlgorithmName": "Borderindex",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "Borderidx",
+            "Unified": "True"
+          },
+          "Comments": "计算样本对象的边界指数"
+        },
+        {
+          "Name": "圆滑度",
+          "AlgorithmName": "Roundness",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "Roundness",
+            "Unified": "True"
+          },
+          "Comments": "计算样本对象的圆滑度"
+        },
+        {
+          "Name": "椭圆拟合",
+          "AlgorithmName": "EllipticFit",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "ElliFit",
+            "Unified": "True"
+          },
+          "Comments": "计算样本对象的椭圆拟合"
+        },
+        {
+          "Name": "矩形拟合",
+          "AlgorithmName": "RectangularFit",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "RectFit",
+            "Unified": "True"
+          },
+          "Comments": "计算样本对象的矩形拟合"
+        },
+        {
+          "Name": "最大内接椭圆半径",
+          "AlgorithmName": "RadiusLargestEnclosedEllipse",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "RLEE",
+            "Unified": "True"
+          },
+          "Comments": "计算样本对象的最大内接椭圆半径"
+        },
+        {
+          "Name": "最小外包椭圆半径",
+          "AlgorithmName": "RadiusSmallestEnclosingEllipse",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "RSEE",
+            "Unified": "True"
+          },
+          "Comments": "计算样本对象的最小外包椭圆半径"
+        }
+      ]
+    },
+    {
+      "Name": "纹理特征",
+      "Features": [
+        {
+          "Name": "GLCM能量",
+          "AlgorithmName": "GLCMASM",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "GLCMASM",
+            "Unified": "False"
+          },
+          "Comments": "计算样本图像层的GLCM能量"
+        },
+        {
+          "Name": "GLCM对比度",
+          "AlgorithmName": "GLCMCON",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "GLCMCON",
+            "Unified": "False"
+          },
+          "Comments": "计算样本图像层的GLCM对比度"
+        },
+        {
+          "Name": "GLCM相关性",
+          "AlgorithmName": "GLCMCOR",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "GLCMCOR",
+            "Unified": "False"
+          },
+          "Comments": "计算样本图像层的GLCM相关性"
+        },
+        {
+          "Name": "GLCM熵",
+          "AlgorithmName": "GLCMENT",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "GLCMENT",
+            "Unified": "False"
+          },
+          "Comments": "计算样本图像层的GLCM熵"
+        },
+        {
+          "Name": "GLCM逆差距",
+          "AlgorithmName": "GLCMIDM",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "GLCMIDM",
+            "Unified": "False"
+          },
+          "Comments": "计算样本图像层的GLCM逆差距"
+        },
+        {
+          "Name": "GLDV角二阶矩",
+          "AlgorithmName": "GLDVASM",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "GLDVASM",
+            "Unified": "False"
+          },
+          "Comments": "计算样本图像层的GLDV角二阶矩"
+        },
+        {
+          "Name": "GLDV对比度",
+          "AlgorithmName": "GLDVCON",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "GLDVCON",
+            "Unified": "False"
+          },
+          "Comments": "计算样本图像层的GLDV对比度"
+        },
+        {
+          "Name": "GLDV均值",
+          "AlgorithmName": "GLDVMEAN",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "GLDVMEAN",
+            "Unified": "False"
+          },
+          "Comments": "计算样本图像层的GLDV均值"
+        },
+        {
+          "Name": "GLDV熵",
+          "AlgorithmName": "GLDVENT",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "GLDVENT",
+            "Unified": "True"
+          },
+          "Comments": "计算样本图像层的GLDV熵"
+        },
+        {
+          "Name": "直方图原点矩",
+          "AlgorithmName": "HistogramOriginMoment(1阶)",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "HOM1",
+            "Unified": "False"
+          },
+          "Comments": "计算样本图像层的直方图原点矩"
+        },
+        {
+          "Name": "直方图中心矩",
+          "AlgorithmName": "HistogramCentralMoment(2阶)",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "HCM2",
+            "Unified": "False"
+          },
+          "Comments": "计算样本图像层的直方图中心矩"
+        },
+        {
+          "Name": "直方图偏度",
+          "AlgorithmName": "HistogramBias",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "HBias",
+            "Unified": "False"
+          },
+          "Comments": "计算样本图像层的直方图偏度"
+        },
+        {
+          "Name": "直方图峰度",
+          "AlgorithmName": "HistogramKurtosis",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "HKurt",
+            "Unified": "False"
+          },
+          "Comments": "计算样本图像层的直方图峰度"
+        },
+        {
+          "Name": "直方图能量",
+          "AlgorithmName": "HistogramEnergy",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "HEner",
+            "Unified": "False"
+          },
+          "Comments": "计算样本图像层的直方图能量"
+        },
+        {
+          "Name": "直方图熵",
+          "AlgorithmName": "HistogramEntropy",
+          "NeedBandNames": [ ],
+          "FieldDef": {
+            "ShortName": "HEntr",
+            "Unified": "False"
+          },
+          "Comments": "计算样本图像层的直方图熵"
+        }
+      ]
+    },
+    {
+      "Name": "指数特征",
+      "Features": [
+        {
+          "Name": "归一化植被指数",
+          "AlgorithmName": "NDVI",
+          "NeedBandNames": [ "近红外", "红" ],
+          "FieldDef": {
+            "ShortName": "NDVI",
+            "Unified": "True"
+          },
+          "Comments": "计算样本的归一化植被指数"
+        },
+        {
+          "Name": "归一化差分水体指数",
+          "AlgorithmName": "NDWI",
+          "NeedBandNames": [ "绿", "近红外" ],
+          "FieldDef": {
+            "ShortName": "NDWI",
+            "Unified": "True"
+          },
+          "Comments": "计算样本的归一化差分水体指数"
+        },
+        {
+          "Name": "阴影植被指数",
+          "AlgorithmName": "SVI",
+          "NeedBandNames": [ "近红外", "红" ],
+          "FieldDef": {
+            "ShortName": "SVI",
+            "Unified": "True"
+          },
+          "Comments": "计算样本的阴影植被指数"
+        },
+        {
+          "Name": "比值植被指数",
+          "AlgorithmName": "RVI",
+          "NeedBandNames": [ "近红外", "红" ],
+          "FieldDef": {
+            "ShortName": "RVI",
+            "Unified": "True"
+          },
+          "Comments": "计算样本的比值植被指数"
+        },
+        {
+          "Name": "高斯归一化水体指数",
+          "AlgorithmName": "GNDWI",
+          "NeedBandNames": [ "绿", "近红外" ],
+          "FieldDef": {
+            "ShortName": "GNDWI",
+            "Unified": "True"
+          },
+          "Comments": "计算样本的高斯归一化水体指数"
+        }
+      ]
+    }
+  ]
+}

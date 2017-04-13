@@ -1,0 +1,419 @@
+﻿{
+  "category": {
+    "name": "自定义分类",
+    "leafs": [
+      {
+        "name": "水体",
+        "properties": {
+          "fillcolor": {
+            "r": 0,
+            "g": 3,
+            "b": 129
+          },
+          "linewith": 1,
+          "linecolor": {
+            "r": 0,
+            "g": 3,
+            "b": 129
+          }
+        },
+        "leafs": [
+          {
+            "name": "海洋",
+            "properties": {
+              "fillcolor": {
+                "r": 0,
+                "g": 92,
+                "b": 230
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 0,
+                "g": 92,
+                "b": 230
+              }
+            }
+          },
+          {
+            "name": "河渠",
+            "properties": {
+              "fillcolor": {
+                "r": 102,
+                "g": 119,
+                "b": 205
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 102,
+                "g": 119,
+                "b": 205
+              }
+            }
+          },
+          {
+            "name": "湖泊库塘",
+            "properties": {
+              "fillcolor": {
+                "r": 0,
+                "g": 183,
+                "b": 239
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 0,
+                "g": 183,
+                "b": 239
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "植被",
+        "properties": {
+          "fillcolor": {
+            "r": 0,
+            "g": 129,
+            "b": 3
+          },
+          "linewith": 1,
+          "linecolor": {
+            "r": 0,
+            "g": 129,
+            "b": 3
+          }
+        },
+        "leafs": [
+          {
+            "name": "耕地",
+            "properties": {
+              "fillcolor": {
+                "r": 100,
+                "g": 180,
+                "b": 0
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 100,
+                "g": 180,
+                "b": 0
+              }
+            }
+          },
+          {
+            "name": "园林地",
+            "properties": {
+              "fillcolor": {
+                "r": 120,
+                "g": 200,
+                "b": 50
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 120,
+                "g": 200,
+                "b": 50
+              }
+            }
+          },
+          {
+            "name": "草地",
+            "properties": {
+              "fillcolor": {
+                "r": 0,
+                "g": 255,
+                "b": 130
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 0,
+                "g": 255,
+                "b": 130
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "道路",
+        "properties": {
+          "fillcolor": {
+            "r": 255,
+            "g": 194,
+            "b": 14
+          },
+          "linewith": 1,
+          "linecolor": {
+            "r": 255,
+            "g": 194,
+            "b": 14
+          }
+        },
+        "leafs": [
+          {
+            "name": "沥青路",
+            "properties": {
+              "fillcolor": {
+                "r": 255,
+                "g": 242,
+                "b": 0
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 255,
+                "g": 242,
+                "b": 0
+              }
+            }
+          },
+          {
+            "name": "水泥路",
+            "properties": {
+              "fillcolor": {
+                "r": 255,
+                "g": 249,
+                "b": 10
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 255,
+                "g": 249,
+                "b": 10
+              }
+            }
+          },
+          {
+            "name": "土石路",
+            "properties": {
+              "fillcolor": {
+                "r": 255,
+                "g": 250,
+                "b": 78
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 255,
+                "g": 250,
+                "b": 78
+              }
+            }
+          },
+          {
+            "name": "铁路",
+            "properties": {
+              "fillcolor": {
+                "r": 255,
+                "g": 252,
+                "b": 147
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 255,
+                "g": 252,
+                "b": 147
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "建筑区",
+        "properties": {
+          "fillcolor": {
+            "r": 255,
+            "g": 78,
+            "b": 194
+          },
+          "linewith": 1,
+          "linecolor": {
+            "r": 255,
+            "g": 78,
+            "b": 194
+          }
+        },
+        "leafs": [
+          {
+            "name": "独立房屋",
+            "properties": {
+              "fillcolor": {
+                "r": 197,
+                "g": 0,
+                "b": 192
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 197,
+                "g": 0,
+                "b": 192
+              }
+            }
+          },
+          {
+            "name": "建筑群",
+            "properties": {
+              "fillcolor": {
+                "r": 255,
+                "g": 10,
+                "b": 249
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 255,
+                "g": 10,
+                "b": 249
+              }
+            }
+          },
+          {
+            "name": "其他构筑物",
+            "properties": {
+              "fillcolor": {
+                "r": 255,
+                "g": 78,
+                "b": 250
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 255,
+                "g": 78,
+                "b": 250
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "裸地",
+        "properties": {
+          "fillcolor": {
+            "r": 240,
+            "g": 240,
+            "b": 240
+          },
+          "linewith": 1,
+          "linecolor": {
+            "r": 240,
+            "g": 240,
+            "b": 240
+          }
+        },
+        "leafs": [
+          {
+            "name": "休耕地",
+            "properties": {
+              "fillcolor": {
+                "r": 255,
+                "g": 10,
+                "b": 10
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 255,
+                "g": 10,
+                "b": 10
+              }
+            }
+          },
+          {
+            "name": "沙地",
+            "properties": {
+              "fillcolor": {
+                "r": 150,
+                "g": 150,
+                "b": 150
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 150,
+                "g": 150,
+                "b": 150
+              }
+            }
+          },
+          {
+            "name": "矿山、采石场、砾地",
+            "properties": {
+              "fillcolor": {
+                "r": 45,
+                "g": 45,
+                "b": 45
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 45,
+                "g": 45,
+                "b": 45
+              }
+            }
+          },
+          {
+            "name": "混合裸地",
+            "properties": {
+              "fillcolor": {
+                "r": 197,
+                "g": 0,
+                "b": 0
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 197,
+                "g": 0,
+                "b": 0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "冰川与常年积雪",
+        "properties": {
+          "fillcolor": {
+            "r": 207,
+            "g": 123,
+            "b": 121
+          },
+          "linewith": 1,
+          "linecolor": {
+            "r": 207,
+            "g": 123,
+            "b": 121
+          }
+        },
+        "leafs": [
+          {
+            "name": "冰川",
+            "properties": {
+              "fillcolor": {
+                "r": 147,
+                "g": 255,
+                "b": 255
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 147,
+                "g": 255,
+                "b": 255
+              }
+            }
+          },
+          {
+            "name": "常年积雪",
+            "properties": {
+              "fillcolor": {
+                "r": 10,
+                "g": 255,
+                "b": 255
+              },
+              "linewith": 1,
+              "linecolor": {
+                "r": 10,
+                "g": 255,
+                "b": 255
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

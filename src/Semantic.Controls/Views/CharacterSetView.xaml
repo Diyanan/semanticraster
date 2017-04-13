@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Semantic.Controls.CharacterSetView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Semantic.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Styles\Includes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <Expander x:Name="root" IsExpanded="{Binding IsExpanded}" Visibility="{Binding IsEnable, Converter={StaticResource BooleanToVisibilityConverter}}">
+        <HeaderedContentControl.Header>
+            <TextBlock Padding="0 2" Text="{Binding Name}" Margin="{StaticResource NormalTextBaselineMargin}" FontWeight="SemiBold" />
+        </HeaderedContentControl.Header>
+        <ItemsControl Margin="32,-2,0,10" ItemsSource="{Binding Characters}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox Grid.Column="0" Margin="2,9,3,0" IsChecked="{Binding IsSelected}">
+                        <TextBlock Grid.Column="1"
+                                   VerticalAlignment="Center" MaxWidth="250" TextWrapping="NoWrap"
+                                   TextTrimming="CharacterEllipsis" 
+                                   Style="{StaticResource NormalTextStyle}" Text="{Binding Name}"/>
+                    </CheckBox>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Expander>
+</UserControl>

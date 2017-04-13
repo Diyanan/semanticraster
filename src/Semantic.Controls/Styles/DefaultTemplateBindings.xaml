@@ -1,0 +1,133 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Semantic.Controls">
+    <DataTemplate DataType="{x:Type local:AddFilterSelectionDialogViewModel}">
+        <local:AddFilterSelectionDialogView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:RangeFilterViewModel}">
+        <local:RangeFilterView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:ExpressionFilterViewModel}">
+        <local:ExpressionFilterView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:ListFilterViewModel}">
+        <local:ListFilterView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:DateTimeEditorViewModel}">
+        <local:DateTimeEditorView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:TableIslandViewModel}">
+        <local:TableIslandView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:TableViewModel}">
+        <local:TableView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:GeoClassViewModel}">
+        <local:GeoClassView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:ColorPickerViewModel}">
+        <local:ColorPickerView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:HostControlViewModel}">
+        <local:HostControlView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:CompletionStatsViewModel}">
+        <local:CompletionStatsView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:MapViewModel}">
+        <local:MapHostView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:StatusBarViewModel}">
+        <local:StatusBarView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:CharacterListEntryViewModel}">
+        <local:CharacterListEntryView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:CharacterListViewModel}">
+        <local:CharacterListView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:CharacterSetViewModel}">
+        <local:CharacterSetView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:CharacterIslandViewModel}">
+        <local:CharacterIslandView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:CharacterSettingsViewModel}">
+        <local:CharacterSettingsView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:CharacterParamSettingViewModel}">
+        <local:CharacterParamSettingView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:ClassificationSettingsViewModel}">
+        <local:ClassificationSettingsView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:ChangeSettingsViewModel}">
+        <local:ChangeSettingsView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:SegmentSettingsViewModel}">
+        <local:SegmentSettingsView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:SegmentMultiSegViewModel}">
+        <local:SegmentMultiSegView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:SegmentMSViewModel}">
+        <local:SegmentMSView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:SegmentGraphCutViewModel}">
+        <local:SegmentGraphCutView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:SegmentWaterShedViewModel}">
+        <local:SegmentWaterShedView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:SegmentJSEGViewModel}">
+        <local:SegmentJSEGView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:SegmentQuadTreeViewModel}">
+        <local:SegmentQuadTreeView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:SegmentSuperPixelViewModel}">
+        <local:SegmentSuperPixelView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:TaskPanelCharactersTabViewModel}">
+        <local:TaskPanelCharactersTabView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:TaskPanelLayersTabViewModel}">
+        <local:TaskPanelLayersTabView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:TaskPanelViewModel}">
+        <local:TaskPanelView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:TaskEditorViewModel}">
+        <local:TaskEditorView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:TaskPanelFiltersTabViewModel}">
+        <local:TaskPanelFiltersTabView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:TaskPanelSamplesTabViewModel}">
+        <local:TaskPanelSamplesTabView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:TaskSettingsViewModel}">
+        <local:TaskSettingsView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:LayerSettingsViewModel}">
+        <local:LayerSettingsView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:JoinManagerViewModel}">
+        <local:JoinManagerView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:VectorSettingsViewModel}">
+        <local:VectorSettingsView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:RasterLayerSettingsViewModel}">
+        <local:RasterLayerSettingsView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:TaskPanelSettingsTabViewModel}">
+        <local:TaskPanelSettingsTabView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:CheckViewModel}">
+        <local:CheckView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type local:FeatureTableItemViewModel}">
+        <local:FeatureTableItemView/>
+    </DataTemplate>
+</ResourceDictionary>

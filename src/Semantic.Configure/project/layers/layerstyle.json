@@ -1,0 +1,28 @@
+﻿{
+  "styles": [
+    {
+      "seqnum": 0,
+      "vis": {
+        "red": "band3",
+        "green": "band2",
+        "blue": "band1"
+      }
+    },
+    {
+      "seqnum": 1,
+      "vis": {
+        "style": "simple",
+        "path": "simple.json",
+        "joins": [ ]
+      }
+    },
+    {
+      "seqnum": 2,
+      "vis": {
+        "style": "unique",
+        "path": "catagory.json",
+        "joins": [ ]
+      }
+    }
+  ]
+}

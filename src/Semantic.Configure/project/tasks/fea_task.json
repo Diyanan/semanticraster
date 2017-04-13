@@ -1,0 +1,33 @@
+﻿{
+  "name": "分割",
+  "task_type": 1,
+  "params": {
+    "input": {
+      "vector": {
+        "data_source": ""
+      },
+      "image": {
+        "data_source": "",
+        "bandcount": "",
+        "bandmap": {
+          "nir": 4,
+          "red": 3,
+          "green": 2
+        }
+      }
+    },
+    "calfeatures": [
+      {
+        "name": "",
+        "algorithm": "",
+        "needbandnames": [ "", "" ],
+        "fielddef": {
+          "shortname": "",
+          "unified": ""
+        },
+        "comments": ""
+      }
+    ],
+    "output": ""
+  }
+}

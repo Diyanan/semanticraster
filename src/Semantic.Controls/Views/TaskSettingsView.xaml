@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Semantic.Controls.TaskSettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:wpfEx="clr-namespace:Semantic.WpfExtensions;assembly=Semantic.WpfExtensions"
+             xmlns:local="clr-namespace:Semantic.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Styles\Includes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="0,4">
+            <TextBlock x:Name="TaskNameLabel" HorizontalAlignment="Left"
+                     Text="任务"
+                     Style="{StaticResource SectionHeaderTextStyle}"/>
+            <TextBox x:Name="TaskNameTextBox" 
+                     Margin="0 4 0 0" HorizontalAlignment="Stretch"
+                     MaxLength="32" wpfEx:FocusHelper.AdvanceOnEnterKey="true"
+                     KeyboardNavigation.IsTabStop="false"
+                     Text="{Binding ParentTask.Model.Name}"/>
+        </StackPanel>
+        <ContentControl Grid.Row="1" Content="{Binding Setting}" Height="390"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,58 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Semantic.Controls"
+             x:Class="Semantic.Controls.TaskPanelView"
+             mc:Ignorable="d">
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Styles\Includes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <Border BorderBrush="White" BorderThickness="1" >
+        <Grid Margin="0,15,0,0">
+            <TabControl x:Name="TaskPanelTabs" Margin="5,0" Grid.Row="1" BorderThickness="0,1,0,0" SelectedIndex="{Binding SelectedIndex}">
+                <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="{x:Type TabItem}" BasedOn="{StaticResource {x:Type TabItem}}">
+                        <Setter Property="ContentControl.ContentTemplate">
+                            <Setter.Value>
+                                <DataTemplate>
+                                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                        <ContentControl KeyboardNavigation.IsTabStop="false" Content="{Binding}"/>
+                                    </ScrollViewer>
+                                </DataTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+                <TabItem x:Name="LayersTab" 
+                         Header="{DynamicResource LayersTabHeaderIcon}" 
+                         Content="{Binding LayersTab}" />
+                <TabItem x:Name="CharactersTab" 
+                         Header="{DynamicResource FieldsTabHeaderIcon}" 
+                         Content="{Binding SamplesTab}"/>
+                <TabItem x:Name="FiltersTab" 
+                         Header="{DynamicResource FiltersTabHeaderIcon}"
+                         Content="{Binding FiltersTab}">
+                </TabItem>
+                <TabItem x:Name="SettingsTab" Header="{DynamicResource SettingsTabHeaderIcon}"
+                         Content="{Binding SettingsTab}"/>
+            </TabControl>
+            <Grid Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="button" Content="Button"  Grid.Column="1" Style="{DynamicResource ChromeCloseButton}" Command="{Binding CloseCommand}"/>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

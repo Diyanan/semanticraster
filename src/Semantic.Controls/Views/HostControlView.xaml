@@ -1,0 +1,267 @@
+﻿<UserControl x:Class="Semantic.Controls.HostControlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Semantic.Controls"
+             xmlns:wpfEx="clr-namespace:Semantic.WpfExtensions;assembly=Semantic.WpfExtensions"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignHeight="480" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <x:Static Member="local:ChromelessWindowBase.StaticallyThemedTemplatesDictionary"/>
+                <ResourceDictionary Source="..\Styles\ChromeButtonStyles.xaml"/>
+                <ResourceDictionary Source="..\Styles\Converters.xaml"/>
+                <ResourceDictionary Source="..\Styles\GeoFlowMetro.xaml"/>
+                <ResourceDictionary Source="..\Styles\DefaultTemplateBindings.xaml"/>
+                <ResourceDictionary Source="..\Styles\MetroRibbon.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Ribbon x:Name="ribbon">
+                <RibbonTab Header="主页">
+                    <RibbonGroup Header="工程" >
+                        <!--<RibbonButton x:Name="ribbonButton" Label="新建"
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/new.png}"
+        					SmallImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/new_small.png}" 
+        					Command="{Binding ProjectManager.NewCommand}"/>-->
+                        <!--<RibbonButton x:Name="ribbonButton1" Label="打开工程"
+                                      LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/open.png}" 
+                                      SmallImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/open_small.png}"
+                                      Command="{Binding ProjectManager.OpenCommand}"/>-->
+                        <RibbonButton x:Name="ribbonButton2" Label="打开mxd"
+                                      LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/open.png}" 
+                                      SmallImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/open_small.png}"
+                                      Command="{Binding ProjectManager.OpenMxdCommand}"/>
+                        <!--<RibbonButton x:Name="ribbonButton3" Label="保存工程"
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/save.png}"
+        					SmallImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/save_small.png}"
+        					Command="{Binding ProjectManager.SaveCommand}"/>-->
+                        <RibbonSplitButton x:Name="RecentProjectsSplitButton" Label="最近打开"
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/recent.png}"
+        					SmallImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/recent_small.png}" 
+        					Command="{Binding ProjectManager.OpenMxdCommand}">
+                            <RibbonGallery BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Auto" MaxHeight="400"
+        						Command="{Binding ProjectManager.RecentProjectGalleryItemCommand}">
+                                <RibbonGalleryCategory Style="{StaticResource RecentProjectsWithoutLinesStyle}"
+        							ItemsSource="{Binding ProjectManager.RecentList}"/>
+                            </RibbonGallery>
+                        </RibbonSplitButton>
+                    </RibbonGroup>
+                    <RibbonGroup Header="快速任务">
+                        <RibbonSplitButton x:Name="ribbonButton41" Label="分割" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/seg_ms.png}"
+        					Command="{Binding CreateSegmentTaskCommand}" 
+        					CommandParameter="{x:Static local:SegmentationAlgorithm.MS}" />
+                        <RibbonButton x:Name="ribbonButton121" Label="特征计算" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/character.png}" 
+        					Command="{Binding CreateFeatureTaskCommand}"  />
+                        <RibbonSplitButton x:Name="ribbonButton122" Label="分类" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/tree.png}"
+        					Command="{Binding CreateClassifyTaskCommand}"
+        					CommandParameter="{x:Static local:ClassificationAlgorithm.Tree}"/>
+                        <RibbonButton x:Name="chanTask" Label="变化"
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/fieldstab.png}"
+        					SmallImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/fieldstab.png}"
+        					Command="{Binding CreateChangeTaskCommand}"/>
+                        <RibbonToggleButton x:Name="ribbonToggleButton" Label="任务面板"
+        					Content="RibbonToggleButton"
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/tourpane.png}"
+        					IsChecked="{Binding TaskEditorVisible}"/>
+                    </RibbonGroup>
+                    <RibbonGroup Header="配置">
+                        <RibbonButton x:Name="CustomClassify" Label="自定义 信息提取"
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/theme.png}"
+        					Command="{Binding CustomClassifyCommand}"/>
+                        <RibbonToggleButton x:Name="ScratchSample" Label="样本采集" IsChecked="{Binding IsScratchingSample}"
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/flatmap.png}"/>
+                        <RibbonToggleButton x:Name="ribbonToggleButton1" Label="配置面板"
+        					Content="RibbonToggleButton"
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/taskpanes.png}"
+        					IsChecked="{Binding TaskPanel.Visible}"/>
+                    </RibbonGroup>
+                    <RibbonGroup Header="特征选择">
+                        <RibbonToggleButton x:Name="ribbonButton111" Label="光谱特征" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/band.png}" 
+        					IsChecked="{Binding TaskSettings.CharacterSetting.BandCharacterChecked}" />
+                        <RibbonToggleButton x:Name="ribbonButton114" Label="形状特征" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/shape.png}" 
+        					IsChecked="{Binding TaskSettings.CharacterSetting.ShapeCharacterChecked}" />
+                        <RibbonToggleButton x:Name="ribbonButton112" Label="纹理特征" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/texture.png}" 
+        					IsChecked="{Binding TaskSettings.CharacterSetting.TextureCharacterChecked}"  />
+                        <RibbonToggleButton x:Name="ribbonButton113" Label="指数特征" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/index.png}" 
+        					IsChecked="{Binding TaskSettings.CharacterSetting.IndexCharacterChecked}" />
+                    </RibbonGroup>
+                    <RibbonGroup Header="地图操作">
+                        <RibbonToggleButton x:Name="CanSelectFeature" Label="要素选择"
+        					Content="RibbonToggleButton"
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/select.png}"
+        					IsChecked="{Binding CanSelectFeature}"/>
+                    </RibbonGroup>
+                    <RibbonGroup Header="工具">
+                        <RibbonButton x:Name="ribbonButton22" Label="精度评价" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/evaluate.png}"/>
+                        <RibbonToggleButton x:Name="ribbonButton23" Label="核准"
+                            IsChecked="{Binding OpenCheckView}"
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/evaluate.png}"/>
+                    </RibbonGroup>
+                    <!--<RibbonGroup Header="样本库"
+        				LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/addlayer.png}">
+                        <RibbonButton x:Name="ribbonButton19" Label="导入样本"
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/add_new.png}"/>
+                        <RibbonButton x:Name="ribbonButton20" Label="分析样本"
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/testing.png}"/>
+                        <RibbonButton x:Name="ribbonButton21" Label="导出样本" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/export.png}"/>
+                    </RibbonGroup>-->
+                </RibbonTab>
+                <!--<RibbonTab Header="分割" d:IsHidden="True">
+                    <RibbonGroup Header="算法">
+                        -->
+                <!--<RibbonButton x:Name="ribbonButton3" Label="多尺度分割" LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/addlayer.png}"/>-->
+                <!--
+                        <RibbonButton x:Name="ribbonButton4" Label="MS分割" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/seg_ms.png}"
+        					Command="{Binding CreateSegmentTaskCommand}" 
+        					CommandParameter="{x:Static local:SegmentationAlgorithm.MS}"/>
+                        <RibbonButton x:Name="ribbonButton5" Label="图割分割" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/seg_graphcut.png}"
+        					Command="{Binding CreateSegmentTaskCommand}" 
+        					CommandParameter="{x:Static local:SegmentationAlgorithm.GraphCut}" />
+                        <RibbonButton x:Name="ribbonButton6" Label="分水岭分割" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/seg_voronoi.png}"
+        					Command="{Binding CreateSegmentTaskCommand}" 
+        					CommandParameter="{x:Static local:SegmentationAlgorithm.WaterShed}" />
+                        <RibbonButton x:Name="ribbonButton7" Label="四叉树分割" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/seg_quadtree.png}"
+        					Command="{Binding CreateSegmentTaskCommand}" 
+        					CommandParameter="{x:Static local:SegmentationAlgorithm.QuadTree}" />
+                        <RibbonButton x:Name="ribbonButton8" Label="超像素分割" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/seg_pixel.png}"
+        					Command="{Binding CreateSegmentTaskCommand}" 
+        					CommandParameter="{x:Static local:SegmentationAlgorithm.SuperPixel}" />
+                        <RibbonButton x:Name="ribbonButton9" Label="JSEG分割" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/seg_jseg.png}"
+        					Command="{Binding CreateSegmentTaskCommand}" 
+        					CommandParameter="{x:Static local:SegmentationAlgorithm.JSEG}" />
+                        <RibbonButton x:Name="ribbonButton10" Label="子分割" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/seg_second.png}"
+        					Command="{Binding CreateSegmentTaskCommand}" 
+        					CommandParameter="{x:Static local:SegmentationAlgorithm.JSEG}" />
+                    </RibbonGroup>
+                </RibbonTab>-->
+                <!--<RibbonTab Header="特征计算" d:IsHidden="True">
+                    <RibbonGroup Header="特征计算">
+                        <RibbonButton x:Name="ribbonButton11" Label="特征计算" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/character.png}" 
+        					Command="{Binding CreateFeatureTaskCommand}"  />
+                    </RibbonGroup>
+                    <RibbonGroup Header="特征选择">
+                        <RibbonToggleButton x:Name="ribbonButton111" Label="光谱特征" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/band.png}" 
+        					IsChecked="{Binding TaskSettings.CharacterSetting.BandCharacterChecked}" />
+                        <RibbonToggleButton x:Name="ribbonButton114" Label="形状特征" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/shape.png}" 
+        					IsChecked="{Binding TaskSettings.CharacterSetting.ShapeCharacterChecked}" />
+                        <RibbonToggleButton x:Name="ribbonButton112" Label="纹理特征" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/texture.png}" 
+        					IsChecked="{Binding TaskSettings.CharacterSetting.TextureCharacterChecked}"  />
+                        <RibbonToggleButton x:Name="ribbonButton113" Label="指数特征" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/index.png}" 
+        					IsChecked="{Binding TaskSettings.CharacterSetting.IndexCharacterChecked}"  />
+                    </RibbonGroup>
+                </RibbonTab>-->
+                <!--<RibbonTab Header="分类">
+
+                    <RibbonGroup Header="快速提取">
+                        <RibbonButton x:Name="ribbonButton12" Label="决策树分类" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/tree.png}"
+        					Command="{Binding CreateClassifyTaskCommand}" 
+        					CommandParameter="{x:Static local:ClassificationAlgorithm.Tree}"/>
+                        <RibbonButton x:Name="ribbonButton13" Label="SVM分类" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/svm.png}"
+        					Command="{Binding CreateClassifyTaskCommand}" 
+        					CommandParameter="{x:Static local:ClassificationAlgorithm.SVM}"/>
+                        <RibbonButton x:Name="ribbonButton14" Label="神经网络" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/ann.png}"
+        					Command="{Binding CreateClassifyTaskCommand}" 
+        					CommandParameter="{x:Static local:ClassificationAlgorithm.ANN}"/>
+                        <RibbonButton x:Name="ribbonButton15" Label="贝叶斯" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/bayes.png}"
+        					Command="{Binding CreateClassifyTaskCommand}" 
+        					CommandParameter="{x:Static local:ClassificationAlgorithm.Bayers}"/>
+                        -->
+                <!--<RibbonButton x:Name="ribbonButton16" Label="最邻近法" 
+                                      LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/addlayer.png}"
+                                      Command="{Binding CreateClassifyTaskCommand}" 
+                                      CommandParameter="{x:Static local:ClassificationAlgorithm.KNN}"/>-->
+                <!--
+                        <RibbonButton x:Name="ribbonButton17" Label="集成法1"
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/jc1.png}"
+        					Command="{Binding CreateClassifyTaskCommand}" 
+        					CommandParameter="{x:Static local:ClassificationAlgorithm.JC1}"/>
+                        <RibbonButton x:Name="ribbonButton18" Label="集成法2" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/jc2.png}"
+        					Command="{Binding CreateClassifyTaskCommand}" 
+        					CommandParameter="{x:Static local:ClassificationAlgorithm.JC2}"/>
+                    </RibbonGroup>
+                    <RibbonGroup Header="精度评价">
+                        <RibbonButton x:Name="ribbonButton22" Label="精度评价" 
+        					LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/def/evaluate.png}"/>
+                    </RibbonGroup>
+                </RibbonTab>-->
+                <!--<RibbonTab Header="应用">
+                    <RibbonGroup Header="变化检测" Margin="0" Width="58.57">
+                        <RibbonButton x:Name="ribbonButton23" Label="面向对象" LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/addlayer.png}"/>
+                    </RibbonGroup>
+                    <RibbonGroup Header="要素提取" Margin="0" Width="199.57">
+                        <RibbonButton x:Name="ribbonButton24" Label="道路提取" LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/addlayer.png}"/>
+                        <RibbonButton x:Name="ribbonButton25" Label="水体提取" LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/addlayer.png}"/>
+                        <RibbonButton x:Name="ribbonButton26" Label="植被提取" LargeImageSource="{wpfEx:MultiDpiPngImage /Semantic.Controls;component/Images/addlayer.png}"/>
+                    </RibbonGroup>
+                </RibbonTab>-->
+            </Ribbon>
+        </Grid>
+        <Grid x:Name="ContentGrid" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Background="Black">
+                <ContentControl x:Name="ProjectPanel" Content="{Binding TaskEditor}" 
+                                Visibility="{Binding TaskEditorVisible, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </Grid>
+            <Grid Grid.Column="1" >
+                <Border Grid.Column="0" BorderBrush="{DynamicResource LightBorder}" BorderThickness="1">
+                    <Grid x:Name="BackGrid" Focusable="True"
+                          VerticalAlignment="Stretch" 
+                          HorizontalAlignment="Stretch">
+                        <ContentControl x:Name="Map" Content="{Binding Map}" 
+                                        VerticalAlignment="Stretch" 
+                                        HorizontalAlignment="Stretch" />
+                    </Grid>
+                </Border>
+            </Grid>
+            <Border Grid.Column="2">
+                <ContentControl x:Name="listView" Width="200" Content="{Binding CheckTable}"
+                                Visibility="{Binding OpenCheckView,Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </Border>
+            <Border Grid.Column="3">
+                <ContentControl x:Name="LayerPane" Width="320" Content="{Binding TaskPanel}" 
+                                Visibility="{Binding TaskPanel.Visible, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </Border>
+        </Grid>
+        <ContentControl x:Name="StatusBar" Content="{Binding StatusBar}"  Grid.Row="2" />
+    </Grid>
+</UserControl>

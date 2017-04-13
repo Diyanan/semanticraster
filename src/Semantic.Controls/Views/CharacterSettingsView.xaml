@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Semantic.Controls.CharacterSettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Semantic.Controls"
+             xmlns:wpfEx="clr-namespace:Semantic.WpfExtensions;assembly=Semantic.WpfExtensions"
+             mc:Ignorable="d" 
+             d:DesignHeight="292.827" d:DesignWidth="247.692">
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Styles\Includes.xaml"/>
+                <ResourceDictionary Source="..\Styles\DefaultTemplateBindings.xaml"/>
+                <ResourceDictionary Source="..\Styles\Converters.xaml"/>
+                <x:Static Member="local:ChromelessWindowBase.StaticallyThemedTemplatesDictionary"/>
+                <ResourceDictionary Source="..\Styles\RedlineBase.xaml"/>
+                <ResourceDictionary Source="..\Styles\GeoFlowMetro.xaml"/>
+                <ResourceDictionary Source="..\Styles\MetroRibbon.xaml"/>
+                <ResourceDictionary Source="..\Styles\FieldListStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Thickness x:Key="FieldMargin">0 6 0 9</Thickness>
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <StackPanel>
+        <TextBlock Text="波段映射" Style="{StaticResource SectionHeaderTextStyle}"/>
+        <StackPanel Margin="{StaticResource PanelSectionContentMargin}"
+                  wpfEx:SpacingHelper.ChildSpacing="{StaticResource PanelItemSpacing}">
+            <local:LayerChooserView x:Name="RasterLayerChooser" Margin="0,4,0,0" DataContext="{Binding RasterLayerChooser}"/>
+            <Border BorderThickness="1" BorderBrush="{StaticResource MetroGray3}" Margin="{StaticResource FieldMargin}">
+                <ScrollViewer x:Name="HeightScrollViewer" MaxHeight="164" VerticalScrollBarVisibility="Auto">
+                    <ItemsControl Background="{DynamicResource MetroBackground}" MinHeight="48" IsTabStop="false"
+        				Style="{StaticResource FieldWellPlaceholderTextItemsControlStyle}"
+        				ItemsSource="{Binding RasterBands, UpdateSourceTrigger=PropertyChanged}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <local:BandEntryView Margin="2"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Border>
+        </StackPanel>
+        <TextBlock Text="矢量图层" Style="{StaticResource SectionHeaderTextStyle}"/>
+        <StackPanel Margin="{StaticResource PanelSectionContentMargin}"
+                  wpfEx:SpacingHelper.ChildSpacing="{StaticResource PanelItemSpacing}">
+            <local:LayerChooserView x:Name="VectorLayerChooser" Margin="0,4,0,0" DataContext="{Binding VectorLayerChooser}"/>
+            <CheckBox x:Name="UseDefaultFieldsCheckBox" Margin="0 6.25"
+                Content="使用默认特征字段"
+                AutomationProperties.AutomationId="UseDefaultFieldsCheckBox"
+                IsChecked="{Binding UseDefaultFields}"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

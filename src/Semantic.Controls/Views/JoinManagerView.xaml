@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Semantic.Controls.JoinManagerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Semantic.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Styles\Includes.xaml"/>
+                <ResourceDictionary Source="..\Styles\RedlineBase.xaml"/>
+                <ResourceDictionary Source="..\Styles\FieldListStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Thickness x:Key="FieldMargin">0 6 0 9</Thickness>
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <StackPanel>
+        <TextBlock Text="已连接数据表" Style="{StaticResource SectionHeaderTextStyle}"/>
+        <StackPanel Margin="{StaticResource PanelSectionContentMargin}">
+            <Border BorderThickness="1" BorderBrush="{StaticResource MetroGray3}" >
+                <ScrollViewer x:Name="HeightScrollViewer" MinHeight="48" VerticalScrollBarVisibility="Auto">
+                    <ItemsControl Margin="2" Background="{DynamicResource MetroBackground}" IsTabStop="false"
+    				Style="{StaticResource FieldWellPlaceholderTextItemsControlStyle}"
+    				ItemsSource="{Binding JoinTables}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <local:JoinEntityView />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Border>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="AddJoinTableBtn"
+                Content="添加连接"
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                Padding="10" Margin="0 10"
+                Command="{Binding AddJoinTableCommand}"/>
+                <Button x:Name="RemoveAllJoinsBtn"
+                Content="移除所有连接"
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                Padding="10" Margin="10 10"
+                Command="{Binding ClearAllTableCommand}"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

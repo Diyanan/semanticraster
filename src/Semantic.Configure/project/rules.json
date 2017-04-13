@@ -1,0 +1,21 @@
+﻿{
+  "filters": [
+    {
+      "clauses": {
+        "measure": {
+          "table": "",
+          "field": ""
+        },
+        "op": "and/or",
+        "first": {
+          "op": "=",
+          "val": "5"
+        },
+        "second": {
+          "op": "=",
+          "val": "10"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="Semantic.Controls.TaskPanelFiltersTabView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Semantic.Controls">
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Styles\Includes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <Grid Margin="{StaticResource PanelIndent}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <local:LayerChooserView x:Name="VectorLayerChooser" Margin="0,4,0,0" DataContext="{Binding Model}"/>
+        <!--local:LayerChooserView x:Name="GeoClassChooserandcolorpicker" /-->
+        <Grid  Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="{StaticResource PanelItemCloseSpacerGridHeight}"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Margin="0 5" Text="分类" Style="{StaticResource SettingsFieldLabelStyle}" />
+            <ContentControl Grid.Row="2" Grid.Column="0" Content="{Binding GeoClassViewModel}"/>
+            <ContentControl Grid.Row="2" Grid.Column="1" KeyboardNavigation.IsTabStop="false" Margin="4,-1,0,0"
+                            Height="22" VerticalAlignment="Center" Content="{Binding ColorPickerViewModel}" />
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="AddFiltersBtn"
+                Content="添加过滤器"
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                Padding="10" Margin="0 10"
+                Command="{Binding AddFiltersCommand}"/>
+            <Button x:Name="Apply" Grid.Column="1"
+                Content="应用"
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                Padding="10" Margin="0 10"
+                Command="{Binding ApplyCommand}"/>
+        </Grid>
+        <ScrollViewer Grid.Row="3" x:Name="FilterListScrollViewer" VerticalScrollBarVisibility="Auto">
+            <ItemsControl IsTabStop="false" ItemsSource="{Binding Filters}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Rectangle Name="separator" Height="1" Fill="{StaticResource SectionSeparator}"/>
+                            <ContentControl KeyboardNavigation.IsTabStop="false" Content="{Binding}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

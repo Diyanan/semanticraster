@@ -1,0 +1,9 @@
+﻿{
+  "layerdefs": [
+    {
+      "name": "test.shp",
+      "layer_type": 0,
+      "data_source": "d:/projects/test.shp"
+    }
+  ]
+}

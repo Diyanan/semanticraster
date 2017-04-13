@@ -1,0 +1,14 @@
+﻿{
+  "name": "change",
+  "tasks": [
+    {
+      "type": 0,
+      "path": "seg/task1.json"
+    },
+    {
+      "type": 0,
+      "path": "seg/task2.json"
+    }
+  ]
+
+}

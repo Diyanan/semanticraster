@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="Semantic.Controls.TaskView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Semantic.Controls"
+             mc:Ignorable="d">
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <x:Static Member="local:ChromelessWindowBase.MainThemeDictionary"/>
+                <x:Static Member="local:ChromelessWindowBase.StaticallyThemedTemplatesDictionary"/>
+                <ResourceDictionary Source="..\Styles\ChromeButtonStyles.xaml"/>
+                <ResourceDictionary Source="..\Styles\Converters.xaml"/>
+                <ResourceDictionary Source="..\Styles\DefaultTemplateBindings.xaml"/>
+                <ResourceDictionary Source="..\Styles\GeoFlowMetro.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <Grid x:Name="Task" Width="212" Height="32">
+        <Grid x:Name="CommandsOverlay" VerticalAlignment="Bottom" Height="32">
+            <Rectangle Grid.Column="0" Grid.ColumnSpan="2"
+                       Opacity="{DynamicResource OverlayOpacity}" 
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch"
+                       Fill="{DynamicResource MetroBackground}"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="TaskName" Grid.Column="0" HorizontalAlignment="Left" Margin="7,0,0,0"
+                     VerticalAlignment="Center" FontSize="13" TextTrimming="CharacterEllipsis">
+                    <TextBlock.Text>
+                        <MultiBinding>
+                            <MultiBinding.Converter>
+                                <local:TaskTitleConverter/>
+                            </MultiBinding.Converter>
+                            <Binding Path="TaskIndex"/>
+                            <Binding Path="Model.Name"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+                <StackPanel x:Name="Controls"
+                                Grid.Column="1" 
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Right"
+                                KeyboardNavigation.IsTabStop="false"
+                                KeyboardNavigation.TabNavigation="Continue"
+                                KeyboardNavigation.DirectionalNavigation="Cycle"
+                                FocusManager.FocusedElement="{Binding ElementName=SettingsButton}">
+                    <UIElement.Visibility>
+                        <MultiBinding Converter="{StaticResource MultiBooleanToVisibilityAnyConverter}">
+                            <Binding Path="IsKeyboardFocused" RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}"/>
+                            <Binding Path="IsKeyboardFocusWithin" RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}"/>
+                            <Binding ElementName="Task" Path="IsMouseOver"/>
+                        </MultiBinding>
+                    </UIElement.Visibility>
+                    <Button x:Name="PlayButton" 
+                            Style="{StaticResource ChromePlayButton}" HorizontalAlignment="Right"
+                            AutomationProperties.AutomationId="ScenePlayButton" 
+                            KeyboardNavigation.IsTabStop="true"
+                            Command="{Binding ExecuteCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=local:TaskView, AncestorLevel=1}, Path=DataContext}">
+                    </Button>
+                    <Button x:Name="SettingsButton"
+                            Style="{StaticResource SettingsButtonStyle}" 
+                            HorizontalAlignment="Right"
+                            Margin="7,0,7,0" ToolTip="任务参数配置"
+                            KeyboardNavigation.IsTabStop="true"
+                            Command="{Binding SettingsCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=local:TaskView, AncestorLevel=1}, Path=DataContext}"/>
+                    <Button x:Name="DeleteButton" 
+                            Style="{StaticResource ChromeCloseButton}"
+                            HorizontalAlignment="Right"
+                            Margin="7,0,7,0" ToolTip="删除任务"
+                            KeyboardNavigation.IsTabStop="true"
+                            Command="{Binding DeleteCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=local:TaskView, AncestorLevel=1}, Path=DataContext}"
+                            IsEnabled="{Binding IsDeleteEnabled}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

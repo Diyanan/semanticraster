@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AdaBoosting.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassifiedData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DataClassification.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DataFilling.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ExportClassifiers.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GLC_ANN.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GLC_Bayes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GLC_Class_Accuracy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GLC_Classifier.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GLC_Classifier_BeIntegrated.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GLC_Knn.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GLC_SVM.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GLC_Tree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelIntegrator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RISC_Accuracy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RISC_Classifier.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RISC_Classifier_AdTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RISC_Classifier_ANN.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RISC_Classifier_Bayes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RISC_Classifier_JC1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RISC_Classifier_JC2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RISC_Classifier_KNN.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RISC_Classifier_SVM.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RISC_Classifier_Tree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RISCClassifierSet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="svm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AdaBoosting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassifiedData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Classifier.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataClassification.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataFilling.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExportClassifiers.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GLC_ANN.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GLC_Bayes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GLC_Class_Accuracy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GLC_Classifier.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GLC_Classifier_BeIntegrated.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GLC_Knn.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GLC_SVM.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GLC_Tree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelIntegrator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RISC_Accuracy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RISC_Classifier.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RISC_Classifier_AdTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RISC_Classifier_ANN.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RISC_Classifier_Bayes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RISC_Classifier_JC1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RISC_Classifier_JC2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RISC_Classifier_KNN.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RISC_Classifier_SVM.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RISC_Classifier_Tree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="svm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
